@@ -1,5 +1,7 @@
 # GitHub Actions 构建与节省等待成本
 
+**本教程仓库不包含 `.github/workflows` 工作流，不会因 push 或 fork 自动构建、读取设备 Secret、上传安装输入或发布镜像。** 下文只解释历史构建仓库的流程；不要将其私人输入恢复与 artifact 上传步骤照搬到公开仓库。
+
 ## 真实成功入口
 
 run 41 使用设备提交 `a9f0500af098f8aee87c86a571638daee92caf26` 的 `.github/workflows/prebuild-audit.yml`，输入 `full_release=true`，调用同提交的 reusable `.github/workflows/sheng-clean-release.yml`。
