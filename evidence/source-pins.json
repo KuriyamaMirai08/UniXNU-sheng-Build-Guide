@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "evidence_run": 43805045606,
+  "target": "ipados-27.0.1-24A446/sheng_ipados27",
+  "repositories": [
+    {
+      "repository": "https://github.com/KuriyamaMirai08/UniXNU-sheng",
+      "commit": "a9f0500af098f8aee87c86a571638daee92caf26",
+      "gitlinks": [
+        {
+          "path": "drivers/Ath12kWifi",
+          "repository": "https://github.com/UniXNU/Ath12kWifi",
+          "commit": "48e23bf15fc21bbd30d5583b42b9c09ad65537db"
+        },
+        {
+          "path": "drivers/QcaBluetooth",
+          "repository": "https://github.com/UniXNU/QcaBluetooth",
+          "commit": "b2fbab61615e0811c076b6f17df5b37c651f339d"
+        },
+        {
+          "path": "drivers/QcomDwc3",
+          "repository": "https://github.com/UniXNU/QcomDwc3",
+          "commit": "e4efe95c903a737e0f5955e5b50a8fb4d2a7d718"
+        },
+        {
+          "path": "drivers/ShengHidInput",
+          "repository": "https://github.com/UniXNU/ShengHidInput",
+          "commit": "114061452959a547aaa08f9ca5aa54033394ca2f"
+        },
+        {
+          "path": "drivers/ShengNovatekTouch",
+          "repository": "https://github.com/UniXNU/ShengNovatekTouch",
+          "commit": "3b44b1b7603eaadae942ea44ddc51bdcc48ad060"
+        },
+        {
+          "path": "drivers/ShengPreflight",
+          "repository": "https://github.com/UniXNU/ShengPreflight",
+          "commit": "9cfc8d2c8d77f2008ba228fa6eff83d2c7ab7fd2"
+        },
+        {
+          "path": "drivers/ShengUfs",
+          "repository": "https://github.com/UniXNU/ShengUfs",
+          "commit": "b11de87c234cf4b8f80a8160fb15e6f37a8e5d0c"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/UniXNU/UniXNU",
+      "commit": "97437dcf7389484a0eeaa8067725ce743aff18ef",
+      "gitlinks": [
+        {
+          "path": "drivers/Adreno740",
+          "repository": "https://github.com/UniXNU/Adreno740",
+          "commit": "4a3921a2b94632002cd31a7af9a82cf809806bec"
+        },
+        {
+          "path": "drivers/AdrenoMetal",
+          "repository": "https://github.com/UniXNU/AdrenoMetal",
+          "commit": "20be9f966a0b947238f80dec22a91bf6c9dfc0a0"
+        },
+        {
+          "path": "drivers/AppleKeyStoreState",
+          "repository": "https://github.com/UniXNU/AppleKeyStoreState",
+          "commit": "6ff4f11d8fdf853351f8d98e1bbe1373fb8da2e6"
+        },
+        {
+          "path": "drivers/ArmCpu",
+          "repository": "https://github.com/UniXNU/ArmCpu",
+          "commit": "d90e457b8392623853ec85c860feef546c767621"
+        },
+        {
+          "path": "drivers/ArmDTPlatform",
+          "repository": "https://github.com/UniXNU/ArmDTPlatform",
+          "commit": "e8bd8d5de395c6cbc00d762c1bef57dbd15a448d"
+        },
+        {
+          "path": "drivers/ArmVirtPlatform",
+          "repository": "https://github.com/UniXNU/ArmVirtPlatform",
+          "commit": "d1423a8bceac4be0478a93d9173587111c040084"
+        },
+        {
+          "path": "drivers/DarwinBoot",
+          "repository": "https://github.com/UniXNU/DarwinBoot",
+          "commit": "5243c68ec332a227fe3680cd5da6d5a0e127035c"
+        },
+        {
+          "path": "drivers/GopFramebuffer",
+          "repository": "https://github.com/UniXNU/GopFramebuffer",
+          "commit": "b0d812d578efa2acb005b66f73168891719af09a"
+        },
+        {
+          "path": "drivers/QcomBaseband",
+          "repository": "https://github.com/UniXNU/QcomBaseband",
+          "commit": "dd0199cf3300764ed52b23f4a47761f91fab21a2"
+        },
+        {
+          "path": "drivers/QcomGeniSpi",
+          "repository": "https://github.com/UniXNU/QcomGeniSpi",
+          "commit": "eac47baefe6a5d2368a70351e6ad1b6361bedbe2"
+        },
+        {
+          "path": "drivers/RamBlock",
+          "repository": "https://github.com/UniXNU/RamBlock",
+          "commit": "737f6dae119ef11990e77dc06bcead945098865e"
+        },
+        {
+          "path": "drivers/SoftwareAES",
+          "repository": "https://github.com/UniXNU/SoftwareAES",
+          "commit": "da07dd5c7d62bbe960f5bd4fe7789574d3a49d8c"
+        },
+        {
+          "path": "drivers/VirtioMmioBlock",
+          "repository": "https://github.com/UniXNU/VirtioMmioBlock",
+          "commit": "4e1013eb8c45077b57f8d38d61b389fe899ea1c3"
+        },
+        {
+          "path": "drivers/VirtioMmioConsole",
+          "repository": "https://github.com/UniXNU/VirtioMmioConsole",
+          "commit": "70253216890b2afcaa6333948726f896f84fc757"
+        },
+        {
+          "path": "kits/AdrenoFirmware",
+          "repository": "https://github.com/UniXNU/AdrenoFirmware",
+          "commit": "20ad3d7aca14bd46aecab6335c780f5413fa054b"
+        },
+        {
+          "path": "kits/AdrenoPM4",
+          "repository": "https://github.com/UniXNU/AdrenoPM4",
+          "commit": "282606b528b2595bc4274ea7490b62b323f35a5f"
+        },
+        {
+          "path": "kits/AirNir",
+          "repository": "https://github.com/UniXNU/AirNir",
+          "commit": "b356371a74cd158c2902f4886f373ebb0f833a36"
+        },
+        {
+          "path": "kits/ArmSmmu4K",
+          "repository": "https://github.com/UniXNU/ArmSmmu4K",
+          "commit": "83969cd874503e65997ff7639f7dcf3d0a92cd17"
+        },
+        {
+          "path": "kits/VerifiedRoot",
+          "repository": "https://github.com/UniXNU/VerifiedRoot",
+          "commit": "974f043d0c71ba2e60331483a41c6c6d35274ee3"
+        },
+        {
+          "path": "kits/XnuPrelink",
+          "repository": "https://github.com/UniXNU/XnuPrelink",
+          "commit": "8f4f3866545727e2dc3d2c8cb60f8a87a9539c12"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/UniXNU/uefi-sheng",
+      "commit": "66421cb7bb5694843aec8de1ca3d1de4c20cca38",
+      "gitlinks": [
+        {
+          "path": "Binaries",
+          "repository": "https://github.com/Project-Silicium/Device-Binaries",
+          "commit": "a1501e0c2e642d6ac0d8f52c85af2a67b75a7799"
+        },
+        {
+          "path": "Common/Mu",
+          "repository": "https://github.com/microsoft/mu_plus",
+          "commit": "b8d46c71610318e36a661819e1e3c0b8bdda413a"
+        },
+        {
+          "path": "Common/Mu_OEM_Sample",
+          "repository": "https://github.com/microsoft/mu_oem_sample",
+          "commit": "b70b4b7bb02c43bf9db2172dfb3ed0457e2361d6"
+        },
+        {
+          "path": "Mu_Basecore",
+          "repository": "https://github.com/microsoft/mu_basecore",
+          "commit": "cfb93724a06ff86ff5ba971413368a7809ee42a5"
+        },
+        {
+          "path": "Silicium-ACPI",
+          "repository": "https://github.com/Project-Silicium/Silicium-ACPI",
+          "commit": "2d465ad77c25de908f0ec7bdfcb57f865b61233c"
+        },
+        {
+          "path": "Silicon/Silicium/OpensslPkg/Library/OpensslLib/openssl",
+          "repository": "https://github.com/openssl/openssl",
+          "commit": "67b5686b4419b4cb8caa502711c41815f5279751"
+        }
+      ]
+    }
+  ],
+  "feeds": [
+    {
+      "repository": "https://github.com/UniXNU/UniXNU-sm8550-common",
+      "commit": "97665e28578483082b674e8375a8fa65f4cf49cf"
+    },
+    {
+      "repository": "https://github.com/apple-oss-distributions/xnu",
+      "commit": "ac9718fb1af618d5ce8678d0dc6e8a58f252216f"
+    },
+    {
+      "repository": "https://github.com/apple-oss-distributions/libplatform",
+      "commit": "b7ed7cf5cf7dd12b98672435db2225a860f199d8"
+    },
+    {
+      "repository": "https://github.com/apple-oss-distributions/libdispatch",
+      "commit": "701f4d1a24ae9c6863901bbbb22624b7d1b87321"
+    },
+    {
+      "repository": "https://github.com/apple-oss-distributions/AvailabilityVersions",
+      "commit": "149b1777f3e8c2133042d8e188f72e3adf6a7110"
+    },
+    {
+      "repository": "https://github.com/microsoft/mu_basecore",
+      "commit": "cfb93724a06ff86ff5ba971413368a7809ee42a5"
+    },
+    {
+      "repository": "https://github.com/apple-oss-distributions/libpthread",
+      "commit": "1f4f5265b319111142f1bf3a27d4484ef5a98314"
+    },
+    {
+      "repository": "https://github.com/ONLYA/corecrypto-2023",
+      "commit": "11fba65b12d8830630e248dfa8344caf8b065f26"
+    },
+    {
+      "repository": "https://github.com/apple-oss-distributions/IOStorageFamily",
+      "commit": "7edb88fbae296fb7c8ce2f64e115e116e566d51c"
+    },
+    {
+      "repository": "https://github.com/apple-oss-distributions/IOHIDFamily",
+      "commit": "e31e90a24c27ad6cbe981650d12a1a4124065b03"
+    }
+  ],
+  "native": "DEVELOPMENT_ARM64_BCM2837",
+  "reference": "RELEASE-LTO",
+  "upstream_device_repository": "https://github.com/UniXNU/UniXNU-sheng",
+  "upstream_device_common_ancestor": "82d9e23ade933aa9d6c9ea2f4f40045e2d985479"
+}

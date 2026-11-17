@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run": 43805045606,
+  "run_url": "https://github.com/KuriyamaMirai08/UniXNU-sheng/actions/runs/43805045606",
+  "build_commit": "a9f0500af098f8aee87c86a571638daee92caf26",
+  "later_acceptance_record_commit": "feda913f92554e18b75e4992e17fe5fb040006da",
+  "toolchain": {
+    "macos": "26.7.2",
+    "macos_build": "25G332",
+    "runner": "macos-26 arm64",
+    "runner_image": "20261102.0473.1",
+    "xcode": "26.6",
+    "xcode_build": "17F113",
+    "iphoneos_sdk": "26.5",
+    "ios_deployment_target": "27.0",
+    "apple_clang": "21.0.0 (clang-2100.1.1.101)",
+    "apple_clang_sha256": "d2e4bf622758eee1bf7267c060497fb2c41e098d37b0fca8be73898dc7e14eda",
+    "llvm": "23.1.4",
+    "lld": "23.1.4",
+    "rust": "1.98.0",
+    "python": "3.15.2",
+    "cryptography": "50.0.2",
+    "cffi": "2.1.1",
+    "pycparser": "3.12",
+    "dtc": "1.8.1",
+    "cmake": "4.4.5",
+    "ninja": "1.13.2",
+    "mtools": "4.0.50",
+    "bison": "3.8.2",
+    "glslang": "16.6.0",
+    "shaderc": "2026.4",
+    "spirv_tools": "1.4.363.0",
+    "pkgconf": "3.0.10",
+    "ipsw": "3.1.749",
+    "cores": 3,
+    "ram_bytes": 7516192768,
+    "jobs": 3,
+    "available_kib_before_fetch": 98942060
+  },
+  "outputs": {
+    "boot.img": {
+      "bytes": 185733120,
+      "sha256": "55f9099fb3a56a68d929bcdc6780755799d008de2910034d2ad37a42d4740b43"
+    },
+    "kernel.macho": {
+      "bytes": 96665600,
+      "sha256": "d9a27c37dec3227d0f5147686cebc50f8f3f3fdd078cda4bebbdc252f00fe5e7"
+    },
+    "payload.img": {
+      "bytes": 184549376,
+      "sha256": "e4e4fd50c85e38f5fd76f946132a7e08f00669998e85c3fa66781f26eb2312f4"
+    }
+  },
+  "embedded_payload_kernel": {
+    "bytes": 96665600,
+    "sha256": "757f2297213314790f97a1339f1ce446b21fdb1ae686aa88574f22be8c4f83ed",
+    "changed_words": 680,
+    "modifications": "author diagnostics and POST integrity sealing"
+  },
+  "diagnostic_boot": {
+    "bytes": 189480960,
+    "sha256": "fbf22394963b8ebcc3530c5eefa94da3249c0c35326dcfd9c8342f844c2932af",
+    "outer_dtb_count": 8,
+    "payload_identical": true,
+    "firmware_identical": true,
+    "generated_separately": true,
+    "user_reported_system_entry": true
+  },
+  "author_boot": {
+    "outer_dtb_count": 1,
+    "outer_header_version": 0,
+    "outer_page_size": 4096,
+    "successful_system_entry_observed_in_this_run": false
+  },
+  "verification": {
+    "full_clean_build_passed": true,
+    "static_acceptance_passed": true,
+    "imported_slots_checked": 21,
+    "prepared_sources_checked": 17,
+    "missing_bindings": 0,
+    "stubbed_bindings": 0,
+    "unproven_kernel_page_references": 0,
+    "fileset_members": 49,
+    "code_data_overlap_bytes": 0,
+    "code_data_headroom_bytes": 0,
+    "post_hmac_checked": true,
+    "post_tamper_rejected": true,
+    "runtime_post_execution_tested": false,
+    "signatures_checked": true,
+    "real_loader_parser_passed": true,
+    "loader_negative_cases": 3,
+    "loader_model_stops_before_adt_allocation": true,
+    "upstream_author_binary_equality_proven": false,
+    "full_runtime_qualification": false
+  },
+  "public_download_cache": {
+    "first_run_hit": false,
+    "saved": true,
+    "files": 2011,
+    "bytes": 9984049658,
+    "build_objects_cached": false,
+    "private_seed_cached": false,
+    "warm_build_speed_measured": false
+  },
+  "reproduction": {
+    "tutorial_full_clean_build_executed": false,
+    "historical_baseline_input_required": true,
+    "original_workflow_has_personal_encrypted_inputs": true,
+    "first_install_path_not_tested_in_run_41": true,
+    "fresh_machine_one_click_reproduction_claimed": false
+  },
+  "known_issues": [
+    "animation stutter",
+    "5 GHz network visible but connection fails; 2.4 GHz works"
+  ]
+}

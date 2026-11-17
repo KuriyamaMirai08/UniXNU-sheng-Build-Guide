@@ -1,0 +1,493 @@
+[
+  {
+    "stage": "environment",
+    "status": "passed",
+    "seconds": 1.45,
+    "argv": [
+      "bash",
+      "-c",
+      "sw_vers; uname -a; sysctl hw.memsize hw.ncpu; df -k; xcodebuild -version; xcrun clang --version; brew list --versions; rustc +1.98.0 --version"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "init-device",
+    "status": "passed",
+    "seconds": 0.106,
+    "argv": [
+      "git",
+      "init",
+      "$BUILD_ROOT/device"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "fetch-device",
+    "status": "passed",
+    "seconds": 0.928,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/device",
+      "fetch",
+      "--depth",
+      "1",
+      "https://github.com/KuriyamaMirai08/UniXNU-sheng.git",
+      "a9f0500af098f8aee87c86a571638daee92caf26"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "checkout-device",
+    "status": "passed",
+    "seconds": 0.148,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/device",
+      "checkout",
+      "--detach",
+      "a9f0500af098f8aee87c86a571638daee92caf26"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "submodules-device",
+    "status": "passed",
+    "seconds": 4.902,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/device",
+      "submodule",
+      "update",
+      "--init",
+      "--recursive"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "init-UniXNU",
+    "status": "passed",
+    "seconds": 0.018,
+    "argv": [
+      "git",
+      "init",
+      "$BUILD_ROOT/UniXNU"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "fetch-UniXNU",
+    "status": "passed",
+    "seconds": 1.126,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/UniXNU",
+      "fetch",
+      "--depth",
+      "1",
+      "https://github.com/UniXNU/UniXNU.git",
+      "97437dcf7389484a0eeaa8067725ce743aff18ef"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "checkout-UniXNU",
+    "status": "passed",
+    "seconds": 0.517,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/UniXNU",
+      "checkout",
+      "--detach",
+      "97437dcf7389484a0eeaa8067725ce743aff18ef"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "submodules-UniXNU",
+    "status": "passed",
+    "seconds": 11.985,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/UniXNU",
+      "submodule",
+      "update",
+      "--init",
+      "--recursive"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "init-uefi-sheng",
+    "status": "passed",
+    "seconds": 0.017,
+    "argv": [
+      "git",
+      "init",
+      "$BUILD_ROOT/uefi-sheng"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "fetch-uefi-sheng",
+    "status": "passed",
+    "seconds": 2.648,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/uefi-sheng",
+      "fetch",
+      "--depth",
+      "1",
+      "https://github.com/UniXNU/uefi-sheng.git",
+      "66421cb7bb5694843aec8de1ca3d1de4c20cca38"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "checkout-uefi-sheng",
+    "status": "passed",
+    "seconds": 1.382,
+    "argv": [
+      "git",
+      "-C",
+      "$BUILD_ROOT/uefi-sheng",
+      "checkout",
+      "--detach",
+      "66421cb7bb5694843aec8de1ca3d1de4c20cca38"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "compatibility",
+    "status": "passed",
+    "seconds": 0.159,
+    "argv": [
+      "python3",
+      "scripts/prepare-package-ci.py",
+      "--unixnu",
+      "$BUILD_ROOT/UniXNU"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "reference-patch-check",
+    "status": "passed",
+    "seconds": 0.02,
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "$BUILD_ROOT/device/patches/build/sheng-reference-archive.patch"
+    ],
+    "cwd": "$BUILD_ROOT/UniXNU"
+  },
+  {
+    "stage": "reference-patch",
+    "status": "passed",
+    "seconds": 0.013,
+    "argv": [
+      "git",
+      "apply",
+      "$BUILD_ROOT/device/patches/build/sheng-reference-archive.patch"
+    ],
+    "cwd": "$BUILD_ROOT/UniXNU"
+  },
+  {
+    "stage": "optional-provider-source-guards",
+    "status": "passed",
+    "seconds": 0.255,
+    "argv": [
+      "python3",
+      "scripts/prepare-sheng-author-audit.py",
+      "--unixnu",
+      "$BUILD_ROOT/UniXNU",
+      "--evidence",
+      "$BUILD_ROOT/evidence"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "framework-diff",
+    "status": "passed",
+    "seconds": 1.415,
+    "argv": [
+      "git",
+      "diff",
+      "--binary"
+    ],
+    "cwd": "$BUILD_ROOT/UniXNU"
+  },
+  {
+    "stage": "reference-builder-regressions",
+    "status": "passed",
+    "seconds": 0.293,
+    "argv": [
+      "python3",
+      "scripts/test-fileset-reference.py",
+      "-v"
+    ],
+    "cwd": "$BUILD_ROOT/UniXNU"
+  },
+  {
+    "stage": "reference-final-link-regressions",
+    "status": "passed",
+    "seconds": 0.555,
+    "argv": [
+      "python3",
+      "scripts/test-author-audit-reference.py",
+      "--builder",
+      "$BUILD_ROOT/UniXNU/scripts/build-fileset-release-reference.py"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "dependencies",
+    "status": "passed",
+    "seconds": 43.631,
+    "argv": [
+      "python3",
+      "$BUILD_ROOT/UniXNU/unixnu",
+      "fetch",
+      "-D",
+      "$BUILD_ROOT/device",
+      "--os",
+      "27",
+      "--out",
+      "$BUILD_ROOT/out",
+      "--config",
+      "$BUILD_ROOT/build.toml",
+      "--uefi",
+      "$BUILD_ROOT/uefi-sheng",
+      "-j",
+      "3"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "configuration",
+    "status": "passed",
+    "seconds": 0.551,
+    "argv": [
+      "bash",
+      "scripts/package.sh",
+      "--os",
+      "27",
+      "--out",
+      "$BUILD_ROOT/out",
+      "--config",
+      "$BUILD_ROOT/build.toml",
+      "--uefi",
+      "$BUILD_ROOT/uefi-sheng",
+      "-j",
+      "3",
+      "--no-deps",
+      "--check"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "source-status",
+    "status": "passed",
+    "seconds": 1.9,
+    "argv": [
+      "python3",
+      "$BUILD_ROOT/UniXNU/unixnu",
+      "status",
+      "-D",
+      "$BUILD_ROOT/device",
+      "--os",
+      "27",
+      "--out",
+      "$BUILD_ROOT/out",
+      "--config",
+      "$BUILD_ROOT/build.toml",
+      "--uefi",
+      "$BUILD_ROOT/uefi-sheng",
+      "-j",
+      "3",
+      "--json"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "assemble-tree",
+    "status": "passed",
+    "seconds": 5.617,
+    "argv": [
+      "python3",
+      "$BUILD_ROOT/UniXNU/unixnu",
+      "tree",
+      "-D",
+      "$BUILD_ROOT/device",
+      "--os",
+      "27",
+      "--out",
+      "$BUILD_ROOT/out",
+      "--config",
+      "$BUILD_ROOT/build.toml",
+      "--uefi",
+      "$BUILD_ROOT/uefi-sheng",
+      "-j",
+      "3"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "author-prelink-regressions",
+    "status": "passed",
+    "seconds": 0.158,
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "test_fileset_emit",
+      "test_fileset_layout",
+      "test_fileset_match",
+      "test_fileset_shape"
+    ],
+    "cwd": "$BUILD_ROOT/out/sheng/ipados-27.0.1-24A446/sheng_ipados27/tree/kits/XnuPrelink"
+  },
+  {
+    "stage": "optional-provider-link-checks",
+    "status": "passed",
+    "seconds": 3.602,
+    "argv": [
+      "python3",
+      "scripts/check-sheng-optional-providers.py",
+      "--tree",
+      "$BUILD_ROOT/out/sheng/ipados-27.0.1-24A446/sheng_ipados27/tree",
+      "--output",
+      "$BUILD_ROOT/evidence/optional-link"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "kernelcache",
+    "status": "passed",
+    "seconds": 1.399,
+    "argv": [
+      "python3",
+      "$BUILD_ROOT/UniXNU/unixnu",
+      "ipsw",
+      "fetch",
+      "KernelCache",
+      "-D",
+      "$BUILD_ROOT/device",
+      "--os",
+      "27",
+      "--out",
+      "$BUILD_ROOT/out",
+      "--config",
+      "$BUILD_ROOT/build.toml",
+      "--uefi",
+      "$BUILD_ROOT/uefi-sheng",
+      "-j",
+      "3"
+    ],
+    "cwd": "$BUILD_ROOT"
+  },
+  {
+    "stage": "touch-firmware",
+    "status": "passed",
+    "seconds": 0.418,
+    "argv": [
+      "python3",
+      "scripts/extract-files.py"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "ath12k",
+    "status": "passed",
+    "seconds": 67.128,
+    "argv": [
+      "bash",
+      "drivers/Ath12kWifi/tools/fetch-sources.sh"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "bluetooth-source",
+    "status": "passed",
+    "seconds": 0.564,
+    "argv": [
+      "python3",
+      "drivers/QcaBluetooth/tools/prepare-linux.py"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "bluetooth-firmware",
+    "status": "passed",
+    "seconds": 0.344,
+    "argv": [
+      "python3",
+      "scripts/stage-bluetooth-firmware.py",
+      ".cache/bt-stage",
+      "--fetch"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "stock-firmware",
+    "status": "passed",
+    "seconds": 158.551,
+    "argv": [
+      "python3",
+      "scripts/download-sheng-firmware.py",
+      "--connections",
+      "16"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "extract-stock-firmware",
+    "status": "passed",
+    "seconds": 35.496,
+    "argv": [
+      "python3",
+      "scripts/extract-sheng-firmware.py",
+      "--delete-archive"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "import-uefi",
+    "status": "passed",
+    "seconds": 2.177,
+    "argv": [
+      "python3",
+      "scripts/import-sheng-uefi.py"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  },
+  {
+    "stage": "release",
+    "status": "passed",
+    "seconds": 2754.09,
+    "argv": [
+      "bash",
+      "scripts/package.sh",
+      "--os",
+      "27",
+      "--out",
+      "$BUILD_ROOT/out",
+      "--config",
+      "$BUILD_ROOT/build.toml",
+      "--uefi",
+      "$BUILD_ROOT/uefi-sheng",
+      "-j",
+      "3",
+      "--no-deps",
+      "--data-ramdisk",
+      "$PRIVATE_DATA_SEED"
+    ],
+    "cwd": "$BUILD_ROOT/device"
+  }
+]
